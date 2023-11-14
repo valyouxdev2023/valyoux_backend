@@ -54,6 +54,25 @@ class AuthController extends Controller
         $success['token'] =  $user->createToken('AppName')->accessToken;
         return response()->json(['success'=>$success], 200);
     }
+
+    public function reset(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:6']
+        ]);
+
+        if ( $validator->fails()) {
+            return response()->json([ 'error' => $validator->errors() ]);
+        }
+        
+        $data = $request->all();
+        if ( !User::where('email', $data['email'])->exists() ){
+            return response()->json([ 'error' => 'User not found!']);
+        }
+        $user = User::where('email', $data['email'])->first();
+        $user->password = Hash::make($data['password']);
+        return response()->json(['success' => $user->update()], 200);
+    }
       
 }
 

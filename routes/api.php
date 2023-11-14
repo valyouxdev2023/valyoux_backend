@@ -21,14 +21,11 @@ use App\Http\Controllers\StripeController;
 Route::middleware('throttle:authentication')->group(function(){
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::post("/register",[AuthController::class, 'register'])->name('auth.register');
+    Route::post('/reset_password',[AuthController::class, 'reset'])->name('auth.reset');
 });
 Route::middleware('throttle:verify')->group(function(){
     Route::post('/resend_verifycode', [AuthController::class, 'resend_verifycode'])->name('auth.resend_verifycode');
     Route::post('/forget', [AuthController::class, 'forget'])->name('auth.forgot-password');
-});
-
-Route::middleware('jwt.verify')->group(function () {
-    Route::post('/reset',[AuthController::class, 'reset'])->name('auth.reset');
 });
 
 Route::post('/verify_accounts',[AuthController::class, 'verify_accounts'])->name('auth.verify_accounts');
