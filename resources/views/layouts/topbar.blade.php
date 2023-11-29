@@ -59,6 +59,8 @@ $users_data = User::all();
         align-items: center;
     }
 
+   
+
     .topbar-new-desktop {
         display: flex;
     }
@@ -581,33 +583,31 @@ $users_data = User::all();
                     <i class="fa fa-fw fa-bars"></i>
                 </button>
             </div>
-
+            
             <nav class="navbar navbar-expand-lg navbar-light nav-right-margin">
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav top-menu">
+                     
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ $url }}">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif; font-size: 16px; color:#050f3f " href="{{ url('account-balance') }}">Bank</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('account-balance') }}">Bank</a>
+                            <a class="nav-link" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif; font-size: 16px" href="{{ url('market') }}">Market</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('market') }}">Market</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.social-media') }}">Social Media</a>
+                            <a class="nav-link" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif; font-size: 16px" href="{{ route('admin.social-media') }}">Social Media</a>
                         </li>
                         {{-- <li class="nav-item">
                             <a href="{{ url('connect') }}" class="nav-link">Connect</a>
                         </li> --}}
                         <li class="nav-item">
-                            <a href="{{ route('admin.watch') }}" class="nav-link">Watch & Earn</a>
+                            <a href="{{ route('admin.watch') }}" class="nav-link" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif; font-size: 16px">Watch & Earn</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.listenandearn') }}" class="nav-link">Listen & Earn</a>
+                            <a href="{{ route('admin.listenandearn') }}" class="nav-link" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif; font-size: 16px">Listen & Earn</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('store') }}" class="nav-link">Store</a>
+                            <a href="{{ url('store') }}" class="nav-link" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif; font-size: 16px; color:#050f3f">Store</a>
                         </li>
                         
                         @if(request()->route()->getName() == 'admin.investor')

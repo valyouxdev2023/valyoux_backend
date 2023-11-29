@@ -85,7 +85,8 @@ $country = Country::all();
                                         </span>
                                         @enderror
                                     </div>
-
+                                     
+                                    <select class="selectpicker countrypicker" data-flag="true" ></select>
                                     <div class="form-group">
                                         <div class="custom-file">
                                             <select class="form-control" name="country">

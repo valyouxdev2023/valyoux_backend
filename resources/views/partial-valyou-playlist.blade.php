@@ -262,6 +262,9 @@ use App\Models\Country;
     }
 
     @media (max-width: 525px) {
+        .promoteCover {
+            background-color: black !important
+        }
         .promoteCover h4 {
             font-size: 14px;
             font-weight: 600;
@@ -428,8 +431,9 @@ margin-bottom: 0px;
                             </div>
                             <div class="media-body align-self-center">
                                 <div class="text-muted">
-                                    <h4 class="mb-1 ml-4" style="font-family: 'Roboto', sans-serif; color: #050F2F; font-weight:500;  ">{{ $investor->first_name.' '.$investor->last_name }}</h2>
+                                    <h4 class="mb-1 ml-4" style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:500;  ">{{ $investor->first_name.' '.$investor->last_name }}</h2>
                                         <p class="mb-2 ml-4" style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:300; ">Music Fan</p>
+                                        <span class="px-1"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1irkvli-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CheckCircleIcon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></span>
                                         <p class="mb-2 ml-4" style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:400; ">Investor</p>
                                 </div>
                             </div>

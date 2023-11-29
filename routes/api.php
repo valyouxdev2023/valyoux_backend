@@ -5,7 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\AuthController;
 
+use App\Http\Controllers\API\BankController;
+
 use App\Http\Controllers\StripeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +34,9 @@ Route::middleware('throttle:verify')->group(function(){
 
 Route::post('/verify_accounts',[AuthController::class, 'verify_accounts'])->name('auth.verify_accounts');
 
+// Route::middleware(['cors'])->group(function () {
+    Route::post('/buy-stock', [BankController::class, 'buyStock'])->name('buy-stock');
+// });
 
 
 
@@ -92,8 +99,8 @@ Route::post('/verify_accounts',[AuthController::class, 'verify_accounts'])->name
 //     Route::post('chargecancelPost','BankController@chargecancelPost')->name('chargecancelPost');
 //     Route::post('crypto-wallet/deposit','BankController@deposit')->name('deposit');
 //     Route::post('crypto-wallet/depositAccessToken','BankController@depositAccessToken')->name('depositAccessToken');
-//     Route::post('buy-stock','BankController@buyStock')->name('buy-stock');
-//     Route::post('sell-stock','BankController@sellStock')->name('sell-stock');
+    // Route::post('buy-stock','BankController@buyStock')->name('buy-stock');
+    Route::post('sell-stock','BankController@sellStock')->name('sell-stock');
 //     Route::get('investment-portfolio','BankController@investmentPortfolio')->name('investment-portfolio');
 //     Route::get('loadinvestordata','BankController@loadinvestordata')->name('loadinvestordata');
 //     Route::get('loadinvestmentdata','BankController@loadinvestmentdata')->name('loadinvestmentdata');

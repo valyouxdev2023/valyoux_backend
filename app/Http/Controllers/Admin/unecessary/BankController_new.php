@@ -215,8 +215,10 @@ class BankController extends Controller
             ]);
         }
     }
-    function buyStock(Request $request)
+    public function buyStock(Request $request)
     {
+       
+
         $wallet = auth()->user()->wallet;
         $artist = Artist::where('id', $request->artist_id)->latest()->get();
 

@@ -19,6 +19,11 @@ use App\Models\Country;
 @section('css')
 <!-- new design css  -->
 <style>
+* {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    -webkit-transform: translate3d(0, 0, 0);
+ }
 	/* media */
 	/* Extra small devices (phones, 600px and down) */
 	@media only screen and (max-width: 600px) {
@@ -68,8 +73,8 @@ use App\Models\Country;
 			padding: 10px;
 			cursor: pointer;
 			letter-spacing: normal;
-			background: #FFFFFF 0% 0% no-repeat padding-box;
-			box-shadow: 0px 3px 6px #00000029;
+			/* background: #FFFFFF 0% 0% no-repeat padding-box; */
+			
 
 		}
 		.input-round {
@@ -114,23 +119,71 @@ use App\Models\Country;
 			background-color: red;
 		}
 
-		.tab-select-nav a {
+		/* .tab-select-nav a {
 			padding: 5px 130px;
 			white-space: nowrap;
 			color: #000!important;
 			font-weight: 600!important;
 			font-size: 16px;
-			border: 1px solid #FFFFFF;
-			border-radius: 30px;
-		}
+			/* border: 1px solid #FFFFFF; */
+			/* border-radius: 30px; */
+		} */
 
-		.tab-select-nav a:hover{
+		/* .tab-select-nav a:hover{
 			border: 1px solid #000000;
 			background: #F7F7F7 0% 0% no-repeat padding-box;		
 			border-radius: 30px;
-		} 
+		}  */
+		.nav-tabs {
+			border-color: #ced4da33!important;
+		}
 
+		.tab-select-nav{
+			padding: 14px 0 7px 0;
+			overflow: auto;
+			display: inline-table;
+		}
+
+		.tab-select-nav a.active{
+			text-decoration: none !important;
+			color: #FF0093 !important;
+			position: relative !important;
+			border-bottom: 2px solid #FF0093;
+		}
+
+		.tab-select-nav a {
+			padding: 5px 20px;
+			white-space: nowrap;
+			color: #050F3F!important;
+			font-weight: 500!important;
+			font-family: "Roboto","Helvetica","Arial",sans-serif;
+            font-size: 0.875rem;
+            line-height: 1.25;
+            letter-spacing: 0.02857em;
+			text-transform: uppercase;
+			border-bottom: 2px solid #FFFFFF;
+		}
+		.nav-tabs {
+         border-bottom: 1px solid white;
+         }
 		/* end nav-tab */
+		/* project-list-table  */
+		.css-i4bv87-MuiSvgIcon-root {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          width: 1em;
+          height: 1em;
+          display: inline-block;
+          fill: currentColor;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          font-size: 1.5rem;
+        }
 
 		/* show video part */
 		.watch-part{
@@ -188,15 +241,15 @@ use App\Models\Country;
 		}
 
 		.btn-text1{
-			background: #F7F7F7 0% 0% no-repeat padding-box;
+			/* background: #F7F7F7 0% 0% no-repeat padding-box; */
 			border: 1px solid #000000;
-			border-radius: 30px;
 			color: #666666;
 			padding: 5px 15px;
 			width: 134px;
 			display: flex;
 			align-items: center;
 			margin-right: 50px;
+			color: #050f2f;
 		}
 
 		.btn-text1 p{
@@ -603,10 +656,11 @@ use App\Models\Country;
 		}
 
 		.btn-text{
-			background: #F7F7F7 0% 0% no-repeat padding-box;
+			/* background: #F7F7F7 0% 0% no-repeat padding-box; */
 			border: 1px solid #000000;
-			border-radius: 30px;
-			color: #666666;
+			font-weight: 500;
+			/* border-radius: 30px; */
+			color: rgb(5 15 47 / var(--tw-text-opacity));
 			padding: 5px 15px;
 			width: 134px;
 			display: flex;
@@ -1020,15 +1074,15 @@ use App\Models\Country;
 			max-height: 400px;
 			overflow-y: auto;
 		}
-		.tab-select-nav a {
-			padding: 5px 80px;
+		/* .tab-select-nav a {
+			padding: 5px 20px;
 			white-space: nowrap;
 			color: #000!important;
 			font-weight: 600!important;
 			font-size: 16px;
 			border: 1px solid #FFFFFF;
-			border-radius: 30px;
-		}
+			/* border-radius: 30px; */
+		} */
 
 		.video-real-watch{
 			display: flex;
@@ -1475,9 +1529,10 @@ use App\Models\Country;
                             </div>
                             <div class="media-body align-self-center">
                                 <div class="text-muted">
-                                    <h4 class="mb-1 ml-4" style="font-family: 'Roboto', sans-serif; color: #050F2F; font-weight:500;  ">{{ Auth::user()->first_name.' '.Auth::user()->last_name }}</h4>
-                                        <p class="mb-2 ml-4" style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:300; ">Music Fan</p>
-                                        <p class="mb-2 ml-4" style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:400; ">Investor</p>
+                                    <h4 class="mb-1  md:small" style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:500;  ">{{ Auth::user()->first_name.' '.Auth::user()->last_name }}</h4>
+                                        <p class="mb-2 " style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:300; line-height: 1.25rem; font-size: 0.875rem;">Music Fan</p>
+										
+                                        <p class="mb-2 " style="font-family: 'Roboto', sans-serif; color: #ffffff; font-weight:400; ">Investor <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1irkvli-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CheckCircleIcon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg></p>
                                 </div>
                             </div>
                         </div>
@@ -1491,12 +1546,12 @@ use App\Models\Country;
                                         <div class="col-12 col-sm-12 col-lg-12">
                                              <div class="row">
                                                 <div class="col-6 col-sm-6 col-lg-6 investment">
-                                                    <p class="text-muted text-truncate mb-2 font-12 " style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:400; ">Artist Investments</p>
-                                                    <p class="mb-0 total_investments" style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:600; font-size: 25px ">0</p>
+                                                    <!-- <p class="text-muted text-truncate mb-2 font-12 " style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:400; ">Artist Investments</p>
+                                                    <p class="mb-0 total_investments" style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:600; font-size: 25px ">0</p> -->
                                                 </div>
                                                  <div class="col-6 col-sm-6 col-lg-6 pad_right-0 song-valyou">
-                                                    <p class="text-muted text-truncate mb-2 font-12 " style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:400; ">Song Valyou's</p>
-                                                    <p class="mb-0 buy_total" style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:600;  font-size: 25px">0</p>
+                                                    <!-- <p class="text-muted text-truncate mb-2 font-12 " style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:400; ">Song Valyou's</p>
+                                                    <p class="mb-0 buy_total" style="color:#ffffff !important; font-family: 'Roboto', sans-serif; font-weight:600;  font-size: 25px">0</p> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -1504,9 +1559,11 @@ use App\Models\Country;
                                 </div>
 
                             </div>
-                            <div class="col-md-4 col-lg-3 align-self-center text-center">
-                                <button class="btn btn-follow" type="button" aria-haspopup="true">
-                                    Follow
+							
+                            <div class="col-md-4 col-lg-3 align-self-center text-right">
+							
+                                <button class="btn btn-follow border rounded p-1 px-3 bg-color-black" type="button" aria-haspopup="true">
+								   Following
                                 </button>
                             </div>
                         </div>
@@ -1517,20 +1574,20 @@ use App\Models\Country;
     </div>
 </div>
 
-<div class="nav nav-tabs tab-select" id="nav-tab" role="tablist">
-    <a class="" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Valyou Audio Playlist</a>
-    <a class="active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Valyou Video Playlist</a>
-    <a class="" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Investments</a>
-    <a class="" id="nav-listen-earn-tab" data-toggle="tab" href="#nav-listen-earn" role="tab" aria-controls="nav-listen-earn" aria-selected="false">Listen & Earn</a>
-    <a class="" id="nav-watch-earn-tab" data-toggle="tab" href="#nav-watch-earn" role="tab" aria-controls="nav-watch-earn" aria-selected="false">Watch & Earn</a>
-    <a class="" id="nav-profile-tab1" data-toggle="tab" href="#nav-profile1" role="tab" aria-controls="nav-profile1" aria-selected="false">Profile</a>
-    <a class="" id="nav-follower-tab" data-toggle="tab" href="#nav-follower" role="tab" aria-controls="nav-follower" aria-selected="false">Followers</a>
-    <a class="" id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-following" aria-selected="false">Following</a>
-    <a class="" id="nav-rewards-tab" data-toggle="tab" href="#nav-rewards" role="tab" aria-controls="nav-rewards" aria-selected="false">Rewards</a>
-    <a class="" id="nav-sign-artist-tab" data-toggle="tab" href="#nav-sign-artist" role="tab" aria-controls="nav-sign-artist" aria-selected="false">Sign Artist</a>
+<div class="nav nav-tabs tab-select-nav pb-2" id="nav-tab" role="tablist" >
+    <a class="active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif;">AUDIO PLAYLIST</a>
+    <a class="" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">VIDEO PLAYLIST</a>
+    <a class="" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">INVESTMENTS</a>
+    <a class="" id="nav-listen-earn-tab" data-toggle="tab" href="#nav-listen-earn" role="tab" aria-controls="nav-listen-earn" aria-selected="false">LISTEN & EARNS</a>
+    <a class="" id="nav-watch-earn-tab" data-toggle="tab" href="#nav-watch-earn" role="tab" aria-controls="nav-watch-earn" aria-selected="false">WATCH & EARN</a>
+    <a class="" id="nav-profile-tab1" data-toggle="tab" href="#nav-profile1" role="tab" aria-controls="nav-profile1" aria-selected="false">PROFILE</a>
+    <a class="" id="nav-follower-tab" data-toggle="tab" href="#nav-follower" role="tab" aria-controls="nav-follower" aria-selected="false">FOLLOWERS</a>
+    <a class="" id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-following" aria-selected="false">FOLLOWING</a>
+    <a class="" id="nav-rewards-tab" data-toggle="tab" href="#nav-rewards" role="tab" aria-controls="nav-rewards" aria-selected="false">REWARDS</a>
+    <a class="" id="nav-sign-artist-tab" data-toggle="tab" href="#nav-sign-artist" role="tab" aria-controls="nav-sign-artist" aria-selected="false">SIGN ARTIST</a>
 </div>
 
-<div class="tab-content" id="myTabContent">
+<div class="tab-content" id="myTabContent" style="padding-top:20px">
 <div class="tab-pane fade" id="nav-listen-earn" role="tabpanel" aria-labelledby="nav-listen-earn-tab">
         <div class="card">
             <div class="card-body">
@@ -1610,11 +1667,34 @@ use App\Models\Country;
             </div>
         </div>
     </div>
-    <div class="tab-pane fade " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <div class="row">
             <div class="col-lg-12">
                 <div class="table-responsive">
-                    <table class="table project-list-table table-nowrap table-centered table-borderless">
+                    <table class="table project-list-table table-nowrap table-centered table-borderless w-full text-sm text-left text-gray-500">
+						<!-- <thead>
+						<tr>
+							<th scope="col" class="pt-6 px-6 whitespace-nowrap">
+								<span>#Rank &nbsp;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UnfoldMoreIcon"><path d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"></path></svg></span>
+							</th>
+							<th scope="col" class="pt-6 px-6 whitespace-nowrap">
+								<span>Cover &nbsp;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UnfoldMoreIcon"><path d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"></path></svg></span>
+							</th>
+							<th scope="col" class="pt-6 px-6 whitespace-nowrap">
+								<span>Song name &nbsp;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UnfoldMoreIcon"><path d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"></path></svg></span>
+						    </th>
+							<th scope="col" class="pt-6 px-6 whitespace-nowrap">
+								<span>Artist Image &nbsp;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UnfoldMoreIcon"><path d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"></path></svg></span>
+						    </th>
+						    <th scope="col" class="pt-6 whitespace-nowrap">
+								<span>Artist Name &nbsp;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UnfoldMoreIcon"><path d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"></path></svg></span>
+							</th>
+							<th scope="col" class="pt-6 px-6 whitespace-nowrap">
+								<span>Song Valyou &nbsp;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="UnfoldMoreIcon"><path d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"></path></svg></span>
+							</th>
+							<th scope="col" class="pt-6 px-6 text-[#FF0093]"><span>Pay Per Stream</span></th>
+						</tr>
+						</thead> -->
                         <tbody>
                             <tr>
                                 <td>
@@ -1624,9 +1704,13 @@ use App\Models\Country;
                                         </a>
                                     </div>
                                 </td>
+								<td>
+								<!-- <div class="MuiAvatar-root MuiAvatar-rounded rounded css-1pl3ekx-MuiAvatar-root">
+									<img alt="Bobby Oparaocha" src="{{ asset('assets/images/drake-gods-plan.jpeg') }} class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"></div>
+                                </td> -->
                                 <td>
                                     <div class="team" data-gearPath="{{ asset('assets/gear_app/json/audiojungle.json') }}">
-                                        <h3 class="text-truncate font-size-20"><a href="#" class="text-dark"><b>1.Dark Fantasy</b></a></h3>
+                                        <h3 class="text-truncate "><a href="#" class="" style="color: gray;"><b>Dark Fantasy</b></a></h3>
                                     </div>
                                 </td>
                                
@@ -1690,13 +1774,13 @@ use App\Models\Country;
             </div>
         </div>
     </div>
-    <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <input type="hidden" name="user_wallet_amount" value="{{ auth()->user()->wallet }}" id="user_wallet_amount">
         <input type="hidden" name="user_role" value="{{ check_role() }}" id="user_role">
         <input type="hidden" name="media_id" id="media_id" value="0">
         <div class="main-board " id="desktop-div">
 		<div class="nav-part">
-			<div class="nav nav-tabs tab-select-nav" id="nav-tab" role="tablist">
+			<div class="nav nav-tabs tab-select-nav" id="nav-tab" role="tablist" style="background:#ffffff; box-shadow: 0px 0px 9.3758px rgba(0,0,0,0.1); border-radius:10px; margin:5px; display:flex;">
 				<a class="active" id="nav-watch-tab" data-toggle="tab" href="#nav-watch" role="tab" aria-controls="nav-watch" aria-selected="true">
 					Watch
 					<span></span>
@@ -1709,11 +1793,11 @@ use App\Models\Country;
 				</a>
 			</div>
 
-			<div class="tab-content" id="watchTabContent">
+			<div class="tab-content" id="watchTabContent" ">
 				<div class="tab-pane fade active show p-3" id="nav-watch" role="tabpanel" aria-labelledby="nav-watch-tab" style="display: block">
 					{{-- video detail part --}}
-					<div class="watch-part">	
-						<div class="video-watch-part-1 col-md-7" style="background-color: white">
+					<div class="watch-part" >	
+						<div class="video-watch-part-1 col-md-7" style="background-color: white; box-shadow: 0px 0px 9.3758px rgba(0,0,0,0.1); border-radius:10px; padding:12px">
 							<div class="video-real-watch">
 								<video class = "my-video" id="see_video" controlsList="nodownload" src="" type="video/mp4" controls></video>
 							</div>
@@ -1721,7 +1805,7 @@ use App\Models\Country;
 							<div class="inner-button-part">
 								<div class="personal-detail-info">
 									<div class="personal-img">			
-										<img src="{{URL::asset('assets/uploads/artist/72921766.jpg')}}" style="width: 48px; height: 48px;" alt="">
+										<img src="{{URL::asset('assets/uploads/artist/72921766.jpg')}}" style="width: 48px; height: 4px;" alt="">
 										
 									</div>
 									<div class="personal-detail-info-content-inner">
@@ -1738,38 +1822,83 @@ use App\Models\Country;
 										</div>
 									</div>
 								</div>
-								<div class="button-view1">
-									<div class="special-show-buttons1">
-										<div class="left-btn1">
-											<div class="btn-text1">
-												<p class="comments1">COMMENTS </p>
-											</div>
-											<div class="btn-text1">
-												<p class="promote1">PROMOTE</p>
-											</div>
-										</div>
-										<div class="right-btn1">
-											<div class="btn-gradient-valyou1">
-												<p class="valyou-song1">VALYOU SONG</p>
-											</div>
-											<a href="{{URL::to('artist/stock-price',$artists[0]->id)}}">
-												<div class="btn-gradient-invest1">
-												<p class="invest1">INVEST</p>
-												</div>
-											</a>	
-										</div>
-									</div>
 								
-								</div>
 
 							</div>
+							{{-- button part --}}
+						<div class="button-view">
+							<div class="col-md-7 col-lg-12 show-buttons">
+								<div class="first-button-part">
+									<div class="left-btn">
+										<div class="btn-text">
+											<p class="comments">COMMENTS </p>
+										</div>
+										<div class="btn-text">
+											<p class="promote">PROMOTE</p>
+										</div>
+									</div>
+									<div class="right-btn" >
+										<div class="btn-gradient-valyou">
+											<p class="valyou-song">VALYOU SONG</p>
+										</div>
+										<a href="{{URL::to('artist/stock-price',$artists[0]->id)}}">
+											<div class="btn-gradient-invest">
+											<p class="invest1">INVEST</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+
+								<div class="second-button-part">			
+									<div class="circle-left">
+										<div class="valyou-circle-num">
+											$1
+										</div>
+										<div class="valyou-circle-num">
+											$2
+										</div>
+										<div class="valyou-circle-num">
+											$3
+										</div>
+										<div class="valyou-circle-num">
+											$4
+										</div>
+										<div class="valyou-circle-num">
+											$5
+										</div>
+										<div class="valyou-circle-num ">
+											<p class="custom-p-btn">Custom</p>
+										</div>
+									</div>
+									<div class="circle-right">
+										<div class="btn-gradient-valyou">
+											<p class="valyou-song">VALYOU SONG</p>
+										</div>
+									</div>						
+								</div>
+
+								<div class="custom-button-part">
+									<div class="custom-input">
+										<input type="text" name="input-custom-value" id="customValue" placeholder="Minimum $1">
+									</div>								
+									<div class="valyou-circle-num ">
+										<p class="valyou-circle-confirm">Confirm</p>
+									</div>
+									<div class="btn-gradient-valyou">
+										<p class="valyou-song">VALYOU SONG</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{-- end button part --}}
 						</div>
 
-						<div class="show-detail-special-part">
+						<div class="show-detail-special-part" style="background-color: white; box-shadow: 0px 0px 9.3758px rgba(0,0,0,0.1); border-radius:10px; padding:12px;">
 							
-							<div class="special-video-part">
+							<div class="special-video-part" style="height: 600px" >
+							<p class="text-2xl font-[800]" style="font-weight:800; font-size: 1.5rem; line-height:2rm; font-family: 'Roboto', sans-serif; font-style:normal; color:#050f3f;">All Videos</p>
 								@foreach($videos as $key=>$row)
-								<div class="especailly-part">
+								<div class="especailly-part" style="background:#ffffff; box-shadow: 0px 0px 9.3758px rgba(0,0,0,0.1); border-radius:10px; margin:10px; display:flex; padding:12px">
 									<div class="video-detail-image" onclick="selVideoDetail({{$row->id}}, 0)">
 										<div class="video-overlay"><i class="fa fa-play-circle-o play-icon"></i></div>	
 										@if($row->audio_cover_image)
@@ -1807,8 +1936,9 @@ use App\Models\Country;
 											</form>
 										</div>
 										<div class="close-btn">
-											<img src="{{URL::asset('assets/images/close_btn.png')}}" class="close_btn" alt="close">
-										</div>						
+											<span aria-hidden="true" class="close_btn" alt="close">x</span>
+										</div>			
+										
 								
 									</div>
 									<div class="show-comment-content-part">
@@ -2015,7 +2145,7 @@ use App\Models\Country;
 					</div>	
 					{{-- end video detail part --}}
 
-					<div class="personal-info-button-part desktop-detail-info">
+					<div class="personal-info-button-part desktop-detail-info" style="margin-bottom: 10px;">
 						{{-- personal detail info --}}
 						<div class="personal-detail-info">
 							<div class="personal-img">			
@@ -2037,75 +2167,10 @@ use App\Models\Country;
 						</div>
 						{{-- end personal detail info --}}
 					
-						{{-- button part --}}
-						<div class="button-view">
-							<div class="col-md-7 show-buttons">
-								<div class="first-button-part">
-									<div class="left-btn">
-										<div class="btn-text">
-											<p class="comments">COMMENTS </p>
-										</div>
-										<div class="btn-text">
-											<p class="promote">PROMOTE</p>
-										</div>
-									</div>
-									<div class="right-btn" >
-										<div class="btn-gradient-valyou">
-											<p class="valyou-song">VALYOU SONG</p>
-										</div>
-										<a href="{{URL::to('artist/stock-price',$artists[0]->id)}}">
-											<div class="btn-gradient-invest">
-											<p class="invest1">INVEST</p>
-											</div>
-										</a>	
-									</div>
-								</div>
-
-								<div class="second-button-part">			
-									<div class="circle-left">
-										<div class="valyou-circle-num">
-											$1
-										</div>
-										<div class="valyou-circle-num">
-											$2
-										</div>
-										<div class="valyou-circle-num">
-											$3
-										</div>
-										<div class="valyou-circle-num">
-											$4
-										</div>
-										<div class="valyou-circle-num">
-											$5
-										</div>
-										<div class="valyou-circle-num ">
-											<p class="custom-p-btn">Custom</p>
-										</div>
-									</div>
-									<div class="circle-right">
-										<div class="btn-gradient-valyou">
-											<p class="valyou-song">VALYOU SONG</p>
-										</div>
-									</div>						
-								</div>
-
-								<div class="custom-button-part">
-									<div class="custom-input">
-										<input type="text" name="input-custom-value" id="customValue" placeholder="Minimum $1">
-									</div>								
-									<div class="valyou-circle-num ">
-										<p class="valyou-circle-confirm">Confirm</p>
-									</div>
-									<div class="btn-gradient-valyou">
-										<p class="valyou-song">VALYOU SONG</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						{{-- end button part --}}
+						
 					</div>				
 					{{-- brand-sponsors-part --}}
-					<div class="row w-full mx-0">
+					<div class="row w-full mx-0" style="background-color: white; box-shadow: 0px 0px 9.3758px rgba(0,0,0,0.1); border-radius:10px; padding:12px">
 						@include('partician.brand_sponsor_list',['list'=>$artists])
 					</div>
 					{{-- end brand-sponsors part --}}
@@ -2200,7 +2265,7 @@ use App\Models\Country;
 								</div>
 								<div class="video-detail-info py-1 pl-2 d-flex">
 									<div class="m-auto">
-										<p class="fs-2 font-weight-bold py-2">{{@$row->singer}} - {{@$row->audio_title}}</p>
+										<p class="fs-2 font-weight-400 py-2" style="font-weight:400; font-size:1rem; line-height: 1.5rem; font-family: 'Roboto', sans-serif; color:#050f3f;">{{@$row->singer}} - {{@$row->audio_title}}</p>
 										<p style="font-size: small; font-weight: 200;">Song Valyou: <strong id="valyou-val">${{ numberformat(@$row->artist->stock_value) }}</strong></p>
 										<h6 class={{$row->artist->change_stock<0?'txt-main': 'text-green'}}><small>Stock Price &nbsp;<span><img class="" width="15" height="15" src="{{$row->artist->change_stock<0?'https://testvps.nwlogics.com/public/assets/images/valyoux/pink_arrow_circle_down.svg': 'https://testvps.nwlogics.com/public/assets/images/valyoux/green_arrow_price_going_up.svg'}}"></span>&nbsp;&nbsp;<strong>${{$row->artist->stock_value}}VXD</strong>&nbsp;<strong>{{$row->artist->change_stock<0?'': '+'}}{{$row->artist->change_stock}}%</strong></small></h6>
 									</div>

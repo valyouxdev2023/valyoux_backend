@@ -87,6 +87,7 @@ class RegisterController extends Controller
             'country' => $data['country'],
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
+            'avatar' => $data['avatar'],
             'timezone' => $timezone_name
         );
         if (request()->has('avatar')) {

@@ -71,14 +71,32 @@ width: 90%;
 {
 margin: 34px 0 0 0;
 }
-
+.css-1irkvli-MuiSvgIcon-root {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentColor;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+    fill: #22C55E;
+    font-size: 16px;
+}
 .card-body.promoteCover {
-background-image: linear-gradient(77deg,#FF4182,#FFA85B 100%);
+background-color: black;
 }
 button.btn.btn-follow {
-background-color: #fff;
-color: #FF6A72;
+/* background-color: #fff; */
+color: #ffffff;
 padding: 6px 21px;
+font-size: 15px;
 }
 .price-card{
 
@@ -216,7 +234,7 @@ padding: 5px 4px;
 }
 .col-lg-3.logo-link a {
 color: #fff;
-background: #fffff;
+
 border-radius: 50px;
 box-shadow: 2px 2px #88888b38;
 color: #FF4182;
