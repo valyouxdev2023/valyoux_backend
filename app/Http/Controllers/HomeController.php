@@ -25,5 +25,4 @@ class HomeController extends Controller
     public function presell() {
         return view('presell');
     }
-    
 }
