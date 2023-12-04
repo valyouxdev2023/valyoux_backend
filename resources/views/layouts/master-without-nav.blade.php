@@ -344,14 +344,14 @@
 <div id="preloader">
     <div id="status">
         <img src="assets/images/valyou_x_black_logo.svg" alt="" class="img-fluid">
-        <!--<div class="spinner-chase">-->
-        <!--    <div class="chase-dot"></div>-->
-        <!--    <div class="chase-dot"></div>-->
-        <!--    <div class="chase-dot"></div>-->
-        <!--    <div class="chase-dot"></div>-->
-        <!--    <div class="chase-dot"></div>-->
-        <!--    <div class="chase-dot"></div>-->
-        <!--</div>-->
+        <div class="spinner-chase">
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+        </div>
     </div>
 </div>
 @yield('content')

@@ -15,18 +15,21 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        // if (! $request->expectsJson()) {
-        //     $path = $request->path();
-        //     $startsWithSlash = Str::startsWith($path, '/');
-        //     if($startsWithSlash){
-        //         return route('home');
-        //     }else{
-        //         return route('login');
-        //     }
-        // }
         if (! $request->expectsJson()) {
-            return route('login');
+            $path = $request->path();
+            $startsWithSlash = Str::startsWith($path, '/');
+            $startsWithPricing = Str::startsWith($path, '/presell');
+            if($startsWithSlash){
+                return route('home');
+            }else if ($startsWithPricing) {
+                return route('presell');
+            }else{
+                return route('login');
+            }
         }
+        // if (! $request->expectsJson()) {
+        //     return route('login');
+        // }
 
     }
 }

@@ -19,11 +19,11 @@ use App\Models\Country;
 @section('css')
 <!-- new design css  -->
 <style>
-* {
+/* * {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     -webkit-transform: translate3d(0, 0, 0);
- }
+ } */
 	/* media */
 	/* Extra small devices (phones, 600px and down) */
 	@media only screen and (max-width: 600px) {
@@ -56,6 +56,7 @@ use App\Models\Country;
 	}
 	/* end media */
   	/* desktop-start */
+
 		.nav-part{
 			background: #FFFFFF 0% 0% no-repeat padding-box;
 			box-shadow: 0px 3px 6px #00000029;
@@ -1184,23 +1185,25 @@ use App\Models\Country;
 	/* mobile responsive */
 	@media only screen and (max-width: 900px){
 
-		#page-topbar {
+		/* #page-topbar {
 			display: none;
-		}
+		} */
 
-		.show-header {
+		/* .show-header {
 			display: block !important;
 			box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px !important;
-		}
+		} */
 
 		.page-content {
-			padding: 0 10px !important;
+			/* padding: 0 10px !important; */
 		}
 		.video-detail-info{
 			margin-left: 20px;
 			padding-top: 5px;
 		}
-
+		.overflow-menu {
+			overflow: auto!important;
+		}
 		.video-detail-info p{
 			font-size: 14px;
 			font-weight: bold;
@@ -1509,10 +1512,10 @@ use App\Models\Country;
 </style>
 <!-- end new design css -->
 @endsection
+@section('title') Investor @endsection
 
 @extends('layouts.master')
 
-@section('title') Market @endsection
 
 @section('content')
 
@@ -1573,8 +1576,8 @@ use App\Models\Country;
         </div>
     </div>
 </div>
-
-<div class="nav nav-tabs tab-select-nav pb-2" id="nav-tab" role="tablist" >
+<div class="overflow-menu">
+<div class="nav nav-tabs tab-select-nav pb-2 " id="nav-tab" role="tablist" >
     <a class="active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" style="font-family: color: inherit; font-weight:400; 'Roboto', sans-serif;">AUDIO PLAYLIST</a>
     <a class="" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">VIDEO PLAYLIST</a>
     <a class="" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">INVESTMENTS</a>
@@ -1585,6 +1588,8 @@ use App\Models\Country;
     <a class="" id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-following" aria-selected="false">FOLLOWING</a>
     <a class="" id="nav-rewards-tab" data-toggle="tab" href="#nav-rewards" role="tab" aria-controls="nav-rewards" aria-selected="false">REWARDS</a>
     <a class="" id="nav-sign-artist-tab" data-toggle="tab" href="#nav-sign-artist" role="tab" aria-controls="nav-sign-artist" aria-selected="false">SIGN ARTIST</a>
+</div>
+
 </div>
 
 <div class="tab-content" id="myTabContent" style="padding-top:20px">
@@ -3435,14 +3440,14 @@ $(document).on('click','.searchresultmain',function(){
 		// end common function
 		});
 
-		var header = document.getElementById("page-topbar");
-		function onScrollHandle() {
-			if (window.pageYOffset > 200) {
-				header.classList.add("show-header");
-			} else {
-				header.classList.remove("show-header");
-			}
-		}
+		// var header = document.getElementById("page-topbar");
+		// function onScrollHandle() {
+		// 	if (window.pageYOffset > 200) {
+		// 		header.classList.add("show-header");
+		// 	} else {
+		// 		header.classList.remove("show-header");
+		// 	}
+		// }
 		
 		function onFavorHandle(ele){
 			console.log(ele.className);
@@ -3491,7 +3496,8 @@ $(document).on('click','.searchresultmain',function(){
 						var data = JSON.parse(response);
 						var artist = data.media;
 						var comments = data.comments;
-						selVideoItem(app_url + '/public/' + data.url, type);
+						selVideoItem(app_url + '/' + data.url, type);
+						console.log(app_url + '/public/' + data.url)
 						var str = viewUserinfo(artist);
 						var str_desktop = viewUserinfodesktop(artist);
 						$('.mo-userinfo').html(str);
@@ -4031,4 +4037,9 @@ function promotion_type(type){
 		
 	}
 	</script>
+	<!-- <script>
+        if ($(window).width() > 767) {
+            document.getElementById('dashBody')
+        }
+    </script> -->
 @endsection

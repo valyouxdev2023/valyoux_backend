@@ -69,7 +69,7 @@
 
 
 
-            <div class="card mb-0 posFixed-sVxd" id="bs-float" style="margin-left: 0; margin-right: 0;">
+            <div class="card mb-0 posFixed-sVxd" id="bs-float" style="margin-left: 0; margin-right: 0; height: 200px;" >
                 <div class="card-body">
                     <div class="stock-price text-center">Stock Price</div>
                     <div class="d-flex d-flexBlock-mob justify-content-center bd-highlight align-items-center">
@@ -255,14 +255,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row text-center d-flex justify-content-center mb-3  mt-2">
-                        <div class="col-xl-2 col-sm-3 col-6">
+                    <div class="row text-center d-flex justify-content-center mb-3  mt-2" style="height: 200px;">
+                        <div class="col-xl-2 col-sm-3 col-6 mb-3">
                             <button class="btn btn-pink btn-sm w-md waves-effect waves-light mr-3" data-toggle="modal" data-target="#sellStockModal">Sell Stock</button>
                         </div>
-                        <div class="col-xl-2 col-sm-3 col-6">
+                        <div class="col-xl-2 col-sm-3 col-6 mb-3">
                             <button class="btn btn-green btn-sm w-md waves-effect waves-light" data-toggle="modal" data-target="#buyStockModal">Buy Stock</button>
                         </div>
+                        
                     </div>
+                    
                 </div>
             </div>
 
@@ -424,6 +426,7 @@
     </div>
 
 <?php } ?>
+
 
 <script>
 
