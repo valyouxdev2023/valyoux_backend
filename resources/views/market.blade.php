@@ -240,19 +240,7 @@
         }
     }
 
-    .project-list-table tr {
-        background: #fff !important;
-        box-shadow: 0 0 9.3578px rgba(0, 0, 0, .1) !important;
-        border-radius: 10px !important;
-        border-radius: 9999px;
-        font-family: Roboto, sans-serif;
-        font-style: normal;
-        -webkit-transform: translateZ(0);
-        color: #050f3f;
-        font-size: 16px
-    }
-
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 650px){
         .project-list-table tr {
             padding: 5px !important;
         }
@@ -626,118 +614,28 @@ $ETHUSDT = json_decode($response)->price;
 
 </div>
 
-<!--  -->
-<div class="d-flex justify-content-between align-items-center px-2 mt-3 search-filter-bar mb-3">
 
-    <div class="d-flex align-items-center justify-content-between w-100 g-2 mr-2 "><svg
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true"
-            viewBox="0 0 24 24" data-testid="SearchIcon">
-            <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-            </path>
-        </svg><input name="search_name" id="search_name"
-            class="w-100 rounded m-0 p-2 outline-none border-0 outline-none-pro"
-            placeholder="Search for music artist brands to invest" data-listener-added_b5d928d9="true">
-
-    </div>
-    <div class="d-none d-lg-flex align-items-center g-2">
-        <div
-            class="border rounded-pill p-1 d-flex justify-content-center align-items-center border-dark cursor-pointer">
-            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-[#444444] css-vubbuv" focusable="false"
-                aria-hidden="true" viewBox="0 0 24 24" data-testid="PublicOutlinedIcon"
-                style="width: 20px; height: 20px;">
-                <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z">
-                </path>
-            </svg>
-        </div>
-        <div class="MuiTabs-root css-orq8zk">
-            <div id="allmain" class="MuiTabs-scroller MuiTabs-fixed css-1anid1y tab-pane fade show active"
-                style="overflow: hidden; margin-bottom: 0px;" role="tabpanel" aria-labelledby="allmain-tab">
-                <div class="MuiTabs-flexContainer css-k008qs tab-select nav nav-pills " style="margin:auto"
-                    id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-                    <a href="#all"
-                        class="active MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                        id="all-tab" data-toggle="pill" role="tab" aria-controls="all" aria-selected="true"
-                        style="text-decoration: none;"> All </a>
-                    <a href="#expression_of_interest"
-                        class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                        id="expression_of_interest-tab" data-toggle="pill" role="tab"
-                        aria-controls="expression_of_interest" aria-selected="false">
-                        Expression of Interest </a>
-                    <a class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                        href="#upcoming" id="upcoming-tab " data-toggle="pill" role="tab" aria-controls="upcoming"
-                        aria-selected="false"> Upcoming </a>
-                    <a href="#professional"
-                        class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                        id="professional-tab" data-toggle="pill" role="tab" aria-controls="professional"
-                        aria-selected="false"> Professional </a>
-                    <a href="#major_artists"
-                        class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                        id="major_artists-tab" data-toggle="pill" role="tab" aria-controls="major_artists"
-                        aria-selected="false"> Major Artists </a>
+    <div class="tab-content 1" id="v-pills-tabContent">
+        <div id="allmain" class="tab-pane fade show active" role="tabpanel" aria-labelledby="allmain-tab">
+            <div class="tab-select nav nav-pills search-bar-web" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="search_bar">
+                    <input placeholder="Search" name="search_name" id="search_name">
                 </div>
+                <a href="#all" class="active" id="all-tab" data-toggle="pill" role="tab" aria-controls="all" aria-selected="true"> All </a>
+                <a href="#expression_of_interest" class="unclicked" id="expression_of_interest-tab" data-toggle="pill" role="tab" aria-controls="expression_of_interest" aria-selected="false"> Expression of Interest </a>
+                <a class="unclicked" href="#upcoming" id="upcoming-tab" data-toggle="pill" role="tab" aria-controls="upcoming" aria-selected="false"> Upcoming </a>
+                <a href="#professional" class="unclicked" id="professional-tab" data-toggle="pill" role="tab" aria-controls="professional" aria-selected="false"> Professional </a>
+                <a href="#major_artists" class="unclicked" id="major_artists-tab" data-toggle="pill" role="tab" aria-controls="major_artists" aria-selected="false"> Major Artists </a>
             </div>
-        </div>
-    </div>
-</div>
-<div class="d-flex d-lg-none align-items-center g-2">
-    <div class="border rounded-pill p-1 d-flex justify-content-center align-items-center border-dark cursor-pointer">
-        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium text-[#444444] css-vubbuv" focusable="false"
-            aria-hidden="true" viewBox="0 0 24 24" data-testid="PublicOutlinedIcon" style="width: 20px; height: 20px;">
-            <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z">
-            </path>
-        </svg>
-    </div>
-    <div class="MuiTabs-root css-orq8zk">
-        <div id="allmain" class="MuiTabs-scroller MuiTabs-fixed css-1anid1y tab-pane fade show active"
-            style="overflow: hidden; margin-bottom: 0px;" role="tabpanel" aria-labelledby="allmain-tab">
-            <div class="MuiTabs-flexContainer css-k008qs tab-select nav nav-pills " style="margin:auto" id="v-pills-tab"
-                role="tablist" aria-orientation="vertical">
 
-                <a href="#all"
-                    class="active MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                    id="all-tab" data-toggle="pill" role="tab" aria-controls="all" aria-selected="true"
-                    style="text-decoration: none;"> All </a>
-                <a href="#expression_of_interest"
-                    class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                    id="expression_of_interest-tab" data-toggle="pill" role="tab" aria-controls="expression_of_interest"
-                    aria-selected="false">
-                    Expression of Interest </a>
-                <a class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                    href="#upcoming" id="upcoming-tab " data-toggle="pill" role="tab" aria-controls="upcoming"
-                    aria-selected="false"> Upcoming </a>
-                <a href="#professional"
-                    class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                    id="professional-tab" data-toggle="pill" role="tab" aria-controls="professional"
-                    aria-selected="false"> Professional </a>
-                <a href="#major_artists"
-                    class="unclicked MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ewhnov"
-                    id="major_artists-tab" data-toggle="pill" role="tab" aria-controls="major_artists"
-                    aria-selected="false"> Major Artists </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  -->
-<div class="tab-content 1" id="v-pills-tabContent">
-    <div id="allmain" class="MuiTabs-scroller MuiTabs-fixed css-1anid1y tab-pane fade show active"
-        style="overflow: hidden; margin-bottom: 0px;" role="tabpanel" aria-labelledby="allmain-tab">
-        <!--  -->
-
-        <!--  -->
-        <div class="row" style="margin: 0;">
-            <div class="col-lg-12" style="padding: 0px 0px 0px !important;">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div id="all" class="tab-pane fade show active " role="tabpanel" aria-labelledby="all-tab">
-                        <div class="table-responsive table-responsive-web">
-                            <table id="project-list-table-web"
-                                class="table project-list-table table-nowrap table-centered table-borderless searchable sortable"
-                                style="boder-spacing: 12px !important">
-                                <thead>
-                                    <tr style="box-shadow: 0 0 9.3578px rgba(0, 0, 0, .1) !important;">
+            <div class="row">
+                <div class="col-lg-12" style="padding: 0px 0px 0px !important;">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div id="all" class="tab-pane fade show active " role="tabpanel" aria-labelledby="all-tab">
+                            <div class="table-responsive table-responsive-web">
+                                <table id="project-list-table-web" class="table project-list-table table-nowrap table-centered table-borderless searchable sortable">
+                                    <thead>
+                                    <tr>
                                         <th scope="col" style="width: 1%" class="text-center"># Rank</th>
                                         <!-- <th scope="col" style="width: 10%">Rank</th>-->
                                         <th scope="col" style="width: 15%">Artist</th>

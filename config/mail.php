@@ -55,11 +55,14 @@ return [
     |
     */
 
+    // 'from' => [
+    //     'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+    //     'name' => env('MAIL_FROM_NAME', 'Example'),
+    // ],
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' =>'andriiseliuk55@gmail.com',
+        'name' => 'Valyou X',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -111,7 +114,7 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
-
+    'pretend' => false,
     'markdown' => [
         'theme' => 'default',
 

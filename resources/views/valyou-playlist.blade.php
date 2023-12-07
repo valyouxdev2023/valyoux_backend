@@ -3496,7 +3496,8 @@ $(document).on('click','.searchresultmain',function(){
 						var data = JSON.parse(response);
 						var artist = data.media;
 						var comments = data.comments;
-						selVideoItem(app_url + '/public/' + data.url, type);
+						selVideoItem(app_url + '/' + data.url, type);
+						console.log(app_url + '/public/' + data.url)
 						var str = viewUserinfo(artist);
 						var str_desktop = viewUserinfodesktop(artist);
 						$('.mo-userinfo').html(str);
