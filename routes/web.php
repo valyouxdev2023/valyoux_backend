@@ -20,9 +20,8 @@ Route::get('/clear-cache', function() {
     return "Cache is cleared";
 });
 
-// Route::get('/home', function(){
-//     dd('ddd');
-// })->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/presell', 'HomeController@presell')->name('presell');
 Auth::routes();
 Route::get('verify/resend', 'Auth\TwoFactorController@resend')->name('verify.resend');
 Route::get('account','Auth\TwoFactorController@account')->name('account')->middleware('auth');
@@ -38,11 +37,11 @@ Route::post('attachments-upload', 'MailerController@attachments_upload')->name('
 
 Route::view('/crypto-ico-landing','crypto-ico-landing')->name('crypto-ico-landing');
 Route::view('/token-presale','token-presale')->name('token-presale');
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
 
 Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'middleware' => ['auth','twofactor']], static function () {
 
-    // Route::get('/', 'HomeController@root')->name('home');
+    Route::get('/', 'HomeController@root')->name('home');
 
     //Permission
     Route::get('permission', 'PermissionController@index')->middleware(['role:1'])->name('permission');

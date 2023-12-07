@@ -85,7 +85,7 @@ $users_data = User::all();
     }
     .navbar-header .dropdown .dropdown-menu.dropnewstuff{
         right: 53px !important;
-        top: -9px !important;
+        top: 0 !important;
     }
     .navbar-header .dropdown .dropdown-menu{
         text-align: left!important;
@@ -136,7 +136,7 @@ $users_data = User::all();
             align-items: center;
         }
         .navbar-brand-box.mv {
-            padding: 0 0 0 15px;
+            /* padding: 0 0 0 15px; */
             margin-right: 10px;
         }
 
@@ -195,7 +195,7 @@ $users_data = User::all();
 		}
 
 		.MultiCarousel{ 
-			float: left; 
+			/* float: left;  */
 			overflow: hidden; 
 			padding: 15px; 
 			width: 100%; 
@@ -430,7 +430,18 @@ $users_data = User::all();
             $notification_count = DB::table('notifications')->where('to_user_id',auth()->user()->id)->where('status',0)->count();
             @endphp
             <div class="inner-flex-end topbar-mobile">
-                <div class=" mr-2 topbar-new topbar-new-mob">
+                <div class=" topbar-new topbar-new-mob">
+                <!-- <div class="dropdown show">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="dropdown" id="totalbalance" aria-expanded="true">
+                            <img src="http://127.0.0.1:8000/assets/images/valyoux/search1.png" width="20">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right align-left dropnewstuff show" x-placement="bottom-end" style="position: absolute; transform: translate3d(-228px, 36px, 0px); top: 0px; left: 0px; will-change: transform;">
+                            <p class="m-0 py-2"><a href="deposit" class="nav-link" >Deposit Balance: $ 0.0 VXD</a></p>
+                            <input type="text" name="investor-list" id="searchinputuser" class="searchData form-control" placeholder="Search for music artist, investors &amp; business profiles on valyou x">
+                            <div class="userListing"></div>
+                        </div>
+                    </div> -->
+
                     <div class="dropdown">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="dropdown" id="totalbalance">
                             <img src="{{ asset('assets/images/valyoux/search1.png') }}" width="20">
@@ -441,6 +452,7 @@ $users_data = User::all();
                             <div class="userListing"></div>
                         </div>
                     </div>
+                    
                     <div class="dropdown">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="dropdown" id="totalbalance">
                             <!--<i class="mdi mdi-wallet"></i>-->
@@ -504,7 +516,7 @@ $users_data = User::all();
                                         <div class="simplebar-offset" style="right: -17px; bottom: 0px;">
                                             <div class="simplebar-content-wrapper" style="height: auto; overflow: hidden scroll;">
                                                 <div class="simplebar-content" style="padding: 0px;">
-                                                    <a href="{{ route('admin.role.switch',['role_id' => 2]) }}" class="text-reset notification-item">
+                                                 <a href="{{ route('admin.role.switch',['role_id' => 2]) }}" class="text-reset notification-item">
                                                         <div class="media">
                                                             <div class="avatar-xs mr-3">
                                                                 <span class="avatar-title rounded-circle font-size-16">

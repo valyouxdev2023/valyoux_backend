@@ -101,7 +101,7 @@ class HomeController extends Controller {
 
                 $stock_value = $market_value = $dividend_payments = '';
                 if ($a->stock_value > 0) {
-                    $stock_value = '$' . number_format($a->stock_value,8);
+                    $stock_value = '$' . number_format($a->stock_value,2);
                 }
                 if ($a->market_value > 0) {
                     $market_value = $a->market_value;
@@ -163,7 +163,7 @@ class HomeController extends Controller {
             foreach ($artists as $key2 => $a) {
                 $stock_value = $market_value = $dividend_payments = '';
                 if ($a->stock_value > 0) {
-                    $stock_value = '$' . number_format($a->stock_value,8);
+                    $stock_value = '$' . number_format($a->stock_value,2);
                 }
                 if ($a->market_value > 0) {
                     // $market_value = '$' . numberformat($a->market_value);
@@ -202,7 +202,7 @@ class HomeController extends Controller {
                 $k = $page+$c;
                 $stock_value = $market_value = $dividend_payments = '';
                 if ($a->stock_value > 0) {
-                    $stock_value = '$' . numberformat($a->stock_value);
+                    $stock_value = '$' . numberformat($a->stock_value,2);
                 }
                 if ($a->market_value > 0) {
                     $market_value = '$' . numberformat($a->market_value);

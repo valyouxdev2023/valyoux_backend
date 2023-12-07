@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <!-- Meta tags for mobile behavior. Recommended to use! -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <?php
     $url = Request::segment(3);
@@ -31,7 +32,8 @@
     <meta property="og:description" content="<?= $meta_description; ?>" />
     <meta property="og:image" content="<?php echo e(URL::asset('/assets/images/valyou_x_black_logo.svg')); ?>" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="<?php echo e(URL::asset('assets/images/valyou_x_emblem.svg')); ?>">
@@ -40,6 +42,14 @@
 </head>
 
 <style>
+    .main-content {
+        min-height: 100%;
+    }
+
+    .page-content {
+        min-height: 100%;
+    }
+
     .header-item {
         height: auto;
     }
@@ -64,8 +74,8 @@
 
         .deposit_box .deposit button,
         .deposit_box .deposit input {
-/*             margin: 0; */
-        	margin-top: 20px;
+            /*             margin: 0; */
+            margin-top: 20px;
         }
     }
 
@@ -100,35 +110,58 @@
 
 
 
-@media (min-width: 325px) {
+    @media (min-width: 325px) {
         .searimg {
-    		flex: 0 0 16.6666666667%;
-    		max-width: 16.6666666667%;
-		}
-		.searcon{
-			flex: 0 0 66.6666666667%;
-    		max-width: 66.6666666667%;
-        	margin-left:20px;
-		}
+            flex: 0 0 16.6666666667%;
+            max-width: 16.6666666667%;
+        }
+
+        .searcon {
+            flex: 0 0 66.6666666667%;
+            max-width: 66.6666666667%;
+            margin-left: 20px;
+        }
     }
 
 
-@media  only screen and (max-width: 1047px) and (min-width: 768px)  {
-.searcon{
-			font-size:9px;
-		}
-}
+    @media  only screen and (max-width: 1047px) and (min-width: 768px) {
+        .searcon {
+            font-size: 9px;
+        }
+    }
+       #status {
+            width: auto;
+            height: auto;
+            position: absolute;
+            left: 49%;
+            top: 50%;
+            margin: -20px 0 0 -20px;
+            transform: translate(-50%, -50%);
+        } 
+         /* <link rel="stylesheet" href="<?php echo e(URL::asset('assets/libs/dropify/css/dropify.min.css')); ?>">  */
 
 </style>
 
 <?php $__env->startSection('body'); ?>
-
-<body data-sidebar="dark" class="" id="dashBody">
+<div id="preloader">
+    <div id="status">
+        <img src="assets/images/valyou_x_black_logo.svg" alt="" class="img-fluid">
+        <div class="spinner-chase">
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+           <div class="chase-dot"></div>
+        </div>
+    </div>
+</div>
+<!-- <body data-sidebar="dark" class="" id="dashBody"> -->
     <!-- Stage Start -->
     <div class="stage">
         <?php echo $__env->yieldSection(); ?>
         <!-- Begin page -->
-        <div id="layout-wrapper">
+        <div id="layout-wrapper" style="height: 100vh">
             <?php echo $__env->make('layouts.topbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <!-- ============================================================== -->
@@ -157,18 +190,20 @@
     </div>
 
     <!-- Gear Player Start -->
-    <div class="gearWrap">
+    <div class="gearWrap" style="display:none; height:0" >
         <div id="gearContainer" class="gear" data-gear="<?php echo e(asset('assets/gear_app/json/setup.json')); ?>"></div>
     </div>
 
     <script>
         if ($(window).width() > 767) {
-            var bbbb = document.getElementById('dashBody');
+            // var bbbb = document.getElementById('dashBody');
+            var bbbb = document.body;
+            console.log(bbbb, "DDdd");
             bbbb.classList.add("sidebar-enable");
             bbbb.classList.add("vertical-collpsed");
         }
     </script>
     <?php echo $__env->make('layouts.footer-script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-</body>
+<!-- </body> -->
 
 </html><?php /**PATH D:\task\Current\Valyou X\git download\valyoux_backend\resources\views/layouts/master.blade.php ENDPATH**/ ?>
